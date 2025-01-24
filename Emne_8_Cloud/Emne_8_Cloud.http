@@ -1,0 +1,6 @@
+@Emne_8_Cloud_HostAddress = http://localhost:5102
+
+GET {{Emne_8_Cloud_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
