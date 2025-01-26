@@ -2,20 +2,19 @@
 
 services:
   nginx:
-    image: nginx:latest
+    image: netycbo/emne_8_cloud:nginx
     container_name: nginx
     ports:
-      - "80:80" # Mapujemy port 80 hosta na port 80 kontenera
+      - "80:80" 
     volumes:
-      - ./nginx/nginx.conf:/etc/Nginx/nginx.conf:ro # Montujemy plik konfiguracyjny Nginx
+      - ./nginx/nginx.conf:/etc/Nginx/nginx.conf:ro 
     depends_on:
       - api
     networks:
       - backend 
 
   api:
-    build:
-      context: . # Budujemy obraz API z lokalnego katalogu
+    image: netycbo/emne_8_cloud:api
     container_name: api
     ports:
       - "8080:8080" 
@@ -28,10 +27,10 @@ services:
       - backend 
 
   mysql:
-    image: mysql:8.0
+    image: netycbo/emne_8_cloud:mysql
     container_name: mysql
     ports:
-      - "3306:3306" # Port bazy danych
+      - "3306:3306" 
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: mydb
