@@ -20,14 +20,14 @@ namespace Emne_8_Cloud.Controllers
             var result = await mediator.Send(request);
             return Ok(result);
         }
-        [HttpDelete("DeleteById{id}")]
+        [HttpDelete("DeleteById/{id}")]
         public async Task<IActionResult> DeleteFromDbById(int id)
         {
             var request = new DeleteByIdRequest { Id = id };
             var result = await mediator.Send(request);
             return Ok(result);
         }
-        [HttpPut("UpdateRecordById{id}")]
+        [HttpPut("UpdateRecordById/{id}")]
         public async Task<IActionResult> GetAllFromDb(int id)
         {
             var request = new UpdateRecordByIdRequest { Id = id };
