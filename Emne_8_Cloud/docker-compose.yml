@@ -2,7 +2,7 @@
 
 services:
   nginx:
-    image: netycbo/emne_8_cloud:nginx
+    image: nginx:latest
     container_name: nginx
     ports:
       - "80:80" 
@@ -14,7 +14,8 @@ services:
       - backend 
 
   api:
-    image: netycbo/emne_8_cloud:api
+    build:
+     context: .
     container_name: api
     ports:
       - "8080:8080" 
@@ -27,7 +28,7 @@ services:
       - backend 
 
   mysql:
-    image: netycbo/emne_8_cloud:mysql
+    image: mysql:8.0
     container_name: mysql
     ports:
       - "3306:3306" 
