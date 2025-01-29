@@ -2,7 +2,9 @@
 
 ## Beskrivelse
 
-Emne_8_Cloud er en .NET-basert applikasjon som tilbyr et REST API for administrasjon av data i en database. Applikasjonen bruker MediatR for å håndtere forespørsler, noe som gjør det enklere å administrere forretningslogikk og separasjon av lagene. Applikasjonen kjøres i Docker-kontainere, noe som muliggjør enkel distribusjon og skalering.
+Emne_8_Cloud er en .NET-basert applikasjon som tilbyr et REST API for administrasjon av data i en database. 
+Applikasjonen bruker MediatR for å håndtere forespørsler, noe som gjør det enklere å administrere forretningslogikk og separasjon av lagene. 
+Applikasjonen kjøres i Docker-kontainere, noe som muliggjør enkel distribusjon og skalering.
 
 ## Funksjoner
 
@@ -24,8 +26,13 @@ Emne_8_Cloud er en .NET-basert applikasjon som tilbyr et REST API for administra
 
    ```bash
    docker-compose up -d
+   
    curl http://localhost:8080/db/GetAll
-   curl -X POST http://localhost:8080/db/AddRecord -H "Content-Type: application/json" -d '{"Titel": "value", "Description": "value"}'
+   
+   curl -X POST http://localhost:8080/db/AddRecord -H "Content-Type: application/json" -d "{\"Titel\": \"value\", \"Description\": \"value\"}"
+   
    curl -X DELETE http://localhost:8080/db/DeleteById/1
-   curl -X PUT http://localhost:8080/db/UpdateRecordById/1 -H "Content-Type: application/json" -d '{"Titel": "new_value1", "Description": "new_value2"}'
+   
+   curl -X PUT http://localhost:8080/Db/UpdateRecordById/3 -H "Content-Type: application/json" -d "{\"Titel\": \"new_value1\", \"Description\": \"new_value2\"}"
+
    
