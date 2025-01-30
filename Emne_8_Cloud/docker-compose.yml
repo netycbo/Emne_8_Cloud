@@ -7,7 +7,9 @@ services:
     ports:
       - "80:80" 
     volumes:
-      - ./nginx/nginx.conf:/etc/Nginx/nginx.conf:ro 
+      - ./nginx/nginx.conf:/etc/Nginx/nginx.conf:ro
+    command: ["/bin/sh", "-c", "/docker-entrypoint.sh && nginx -g 'daemon off;'"] #VS Code requires capitalized folder names, but there's a conflict with Nginx, which requires lowercase folder names.
+                                                                            #Even though the nginx.conf file is loaded correctly, Nginx is using the default.conf file.
     depends_on:
       - api
     networks:
