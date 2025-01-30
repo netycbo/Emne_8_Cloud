@@ -29,10 +29,10 @@ Applikasjonen kjøres i Docker-kontainere, noe som muliggjør enkel distribusjon
    
    curl http://localhost:8080/db/GetAll
    
-   curl -X POST http://localhost:8080/db/AddRecord -H "Content-Type: application/json" -d "{\"Titel\": \"value\", \"Description\": \"value\"}"
+   curl -X POST http://localhost/api/db/AddRecord -H "Content-Type: application/json" -d "{\"Titel\": \"value\", \"Description\": \"value\"}"
    
-   curl -X DELETE http://localhost:8080/db/DeleteById/1
+   curl -X DELETE http://localhost/api/db/DeleteById/1
    
-   curl -X PUT http://localhost:8080/Db/UpdateRecordById/3 -H "Content-Type: application/json" -d "{\"Titel\": \"new_value1\", \"Description\": \"new_value2\"}"
+   curl -X PUT http://localhost/api/Db/UpdateRecordById/3 -H "Content-Type: application/json" -d "{\"Titel\": \"new_value1\", \"Description\": \"new_value2\"}"
 
    
